@@ -25,7 +25,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       icon: "h-10 w-10",
     }
     
-    const classes = \`\${baseStyles} \${variantStyles[variant]} \${sizeStyles[size]} \${className || ''}\`
+    const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className || ''}`
     
     return (
       <button
