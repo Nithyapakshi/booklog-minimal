@@ -1,13 +1,13 @@
-/* Basic styles without Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
 }
 
-.dark body {
+.dark {
   background-color: #1a1a1a;
   color: #ffffff;
 }
