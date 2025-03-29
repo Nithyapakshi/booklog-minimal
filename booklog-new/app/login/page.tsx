@@ -24,8 +24,15 @@ export default function LoginPage() {
 
       if (error) throw error
       router.push("/dashboard")
-    } catch (error: any) {
-      setError(error.message || "An error occurred during login")
+    } catch (error: unknown) {
+      // Use a type guard to safely access properties
+      if (error instanceof Error) {
+        setError(error.message)
+      } else if (typeof error === 'object' && error !== null && 'message' in error) {
+        setError((error as { message: string }).message)
+      } else {
+        setError("An error occurred during login")
+      }
     } finally {
       setLoading(false)
     }
