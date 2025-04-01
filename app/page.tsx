@@ -1,21 +1,23 @@
 import Link from "next/link"
-import { cookies } from "next/headers"
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 
-export default async function HomePage() {
-  const cookieStore = cookies()
-  const supabase = createServerComponentClient({ cookies: () => cookieStore })
-  
-  // Check if user is already logged in
-  const { data: { session } } = await supabase.auth.getSession()
-  
+export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
@@ -39,9 +41,7 @@ export default async function HomePage() {
       <main className="flex-grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="lg:max-w-4xl">
-            <h2 className="text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
-              Track your reading journey
-            </h2>
+            <h2 className="text-5xl font-extrabold text-gray-900 tracking-tight mb-6">Track your reading journey</h2>
             <p className="text-xl text-gray-500 max-w-3xl mb-10">
               Manage your book collection, track your reading progress, and discover new books to read.
             </p>
@@ -102,9 +102,7 @@ export default async function HomePage() {
                 </svg>
               </div>
               <h3 className="text-lg font-medium text-gray-900">Organize Your Collection</h3>
-              <p className="mt-2 text-gray-600">
-                Categorize your books and keep your reading list organized.
-              </p>
+              <p className="mt-2 text-gray-600">Categorize your books and keep your reading list organized.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="h-12 w-12 rounded-md bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
